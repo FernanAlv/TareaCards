@@ -93,7 +93,7 @@ data class CardData(
 fun Cards(imageUrl: String, username: String, description: String, avatarUrl: String) {
     val isLiked = remember { mutableStateOf(false) }
 
-    // Imprimir la URL de la imagen para depuración
+
     Log.d("ImageUrl", "Cargando imagen de: $imageUrl")
     Log.d("AvatarUrl", "Cargando avatar de: $avatarUrl")
 
@@ -129,7 +129,7 @@ fun Cards(imageUrl: String, username: String, description: String, avatarUrl: St
                 )
             }
 
-            // Detectar el doble clic en la imagen
+
             AsyncImage(
                 model = imageUrl,
                 contentDescription = null,
@@ -139,7 +139,7 @@ fun Cards(imageUrl: String, username: String, description: String, avatarUrl: St
                     .pointerInput(Unit) {
                         detectTapGestures(
                             onDoubleTap = {
-                                // Cambiar el estado de 'like' al hacer doble clic
+
                                 isLiked.value = !isLiked.value
                             }
                         )
